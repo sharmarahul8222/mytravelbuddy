@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/chat">
+    <fragment
+        android:id="@+id/chat"
+        android:name="com.example.mytravelbuddy.fragments.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/match"
+        android:name="com.example.mytravelbuddy.fragments.MatchFragment"
+        android:label="fragment_match"
+        tools:layout="@layout/fragment_match" />
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.example.mytravelbuddy.fragments.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.mytravelbuddy.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
