@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/handshake" />
+        android:background="@color/primary_purple"
+        app:srcCompat="@drawable/handshakeicon" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_email"

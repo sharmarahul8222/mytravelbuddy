@@ -13,4 +13,22 @@
     <color name="orange">#FF5722</color>
     <color name="light_beige">#FFF3E0</color>
 
+    <color name="colorPrimary">#49BEFF</color>
+    <color name="colorPrimaryDark">#65DCE5</color>
+    <color name="accent">#0D5D98</color>
+    <color name="address">#2F7092</color>
+    <color name="followers">#0D5D98</color>
+    <color name="headings">#3797CF</color>
+    <color name="solidCircle">#80FFFFFF</color>
+    <color name="circleBorder">#30FFFFFF</color>
+    <color name="gradEnd">#67EFC8</color>
+    <color name="gradStart">#63C9FF</color>
+    <color name="followerBg">#65DCE5</color>
+    <color name="followingBg">#49BEFF</color>
+    <color name="grey">#E5E5E5</color>
+    <color name="primary_purple">#7b39ed</color>
+
+
+
+
 </resources>

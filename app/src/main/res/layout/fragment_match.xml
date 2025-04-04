@@ -5,10 +5,42 @@
     android:layout_height="match_parent"
     tools:context=".fragments.MatchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/match_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:background="@color/primary_purple"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/logout"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="73dp"
+        android:text="Match fragment"
+        android:layout_gravity="center"/>
 
 </FrameLayout>
