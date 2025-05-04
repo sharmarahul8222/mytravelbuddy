@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "400889550766",
+    "project_id": "mytravelbuddy-baa86910",
+    "storage_bucket": "mytravelbuddy-baa86910.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400889550766:android:5106519dc60b1506db5a3f",
+        "android_client_info": {
+          "package_name": "com.example.mytravelbuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA23YAHHKoV5tPQxufnjUaPHzIJ41RqzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
