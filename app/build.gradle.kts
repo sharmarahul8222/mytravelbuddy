@@ -1,10 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
     namespace = "com.example.mytravelbuddy"
     compileSdk = 35
+    buildFeatures{
+        viewBinding=true;
+    }
 
     defaultConfig {
         applicationId = "com.example.mytravelbuddy"
@@ -44,8 +48,13 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    //implementation(libs.firebase.database)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.google.firebase:firebase-auth:22.3.0")        // For authentication
+    implementation ("com.google.firebase:firebase-firestore:24.10.0")   // For Firestore
+
 }

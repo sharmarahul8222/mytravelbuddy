@@ -30,6 +30,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish(); // Optional: Prevent user from going back to splash screen
             }
-        }, 20000);
+        }, 1000);
     }
 }
