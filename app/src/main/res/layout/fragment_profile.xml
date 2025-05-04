@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="45dp"
     android:orientation="vertical"
+    android:paddingTop="45dp"
     tools:context=".fragments.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,278 +19,256 @@
             android:layout_height="96dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/profilepic"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/profile_image"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/plus_image"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/plus"
+            android:contentDescription="@string/edit_image"
             app:civ_border_color="@color/white"
             app:civ_border_width="2dp"
-            app:layout_constraintBottom_toBottomOf="@+id/profile_image"
-            app:layout_constraintEnd_toEndOf="@+id/profile_image"
-            app:layout_constraintHorizontal_bias="0.95"
-            app:layout_constraintStart_toStartOf="@+id/profile_image"
-            app:layout_constraintTop_toTopOf="@+id/profile_image"
-            app:layout_constraintVertical_bias="0.9" />
+            app:layout_constraintTop_toTopOf="@id/profile_image"
+            app:layout_constraintBottom_toBottomOf="@id/profile_image"
+            app:layout_constraintEnd_toEndOf="@id/profile_image"
+            app:layout_constraintStart_toStartOf="@id/profile_image"
+            app:layout_constraintVertical_bias="0.9"
+            app:layout_constraintHorizontal_bias="0.95" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="UserName"
+            android:text="@string/username"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/profile_image"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
             android:id="@+id/Connections_Button"
-            style="@style/Widget.Material3.Button.Icon"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:background="@color/light_blue"
-            android:text="Connections"
+            android:backgroundTint="@color/light_blue"
+            android:text="@string/connections"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/EditProfile_Button"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintTop_toBottomOf="@id/userName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintEnd_toStartOf="@id/EditProfile_Button"
+            app:layout_constraintHorizontal_weight="1" />
 
         <Button
             android:id="@+id/EditProfile_Button"
-            style="@style/Widget.Material3.Button.Icon"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:background="@color/light_blue"
-            android:text="Edit Profile"
+            android:backgroundTint="@color/light_blue"
+            android:text="@string/edit_profile"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userName"
+            app:layout_constraintStart_toEndOf="@id/Connections_Button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/Connections_Button"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
+            app:layout_constraintHorizontal_weight="1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginBottom="50dp"
-            android:focusableInTouchMode="true">
+            android:paddingBottom="50dp">
 
+            <!-- Reusable Input Field Template -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:hint="@string/name"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bio"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="6dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:hint="@string/bio"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:lines="5"
-                    android:gravity="top"
-                    android:overScrollMode="always"
-                    android:scrollbars="vertical"
-                    android:scrollbarStyle="insideInset"
-                    android:scrollHorizontally="false"/>
-
+                    android:gravity="top" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
                 android:hint="@string/mobile"
-                android:layout_marginTop="6dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    />
+                    android:inputType="phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
                 android:hint="@string/email"
-                android:layout_marginTop="6dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:focusable="false"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    />
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Dropdown Fields -->
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/gender"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="6dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                >
+                android:hint="@string/gender">
+
                 <AutoCompleteTextView
                     android:id="@+id/gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"/>
-
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/age"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="6dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                android:hint="@string/age">
 
                 <AutoCompleteTextView
                     android:id="@+id/age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"/>
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/profession"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="6dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                android:hint="@string/profession">
 
                 <AutoCompleteTextView
                     android:id="@+id/profession"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"/>
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                >
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Your Companio Should Be: "
-                    android:textColor="@color/black"
-                    android:textSize="22dp"
-                    android:textStyle="bold"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="16dp"
+                android:text="@string/companion_label"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/companio_profession"
-                android:layout_marginTop="6dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-                <AutoCompleteTextView
-                    android:id="@+id/companioProfession"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/companio_gender"
-                android:layout_marginTop="6dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                >
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:hint="@string/companio_profession">
+
                 <AutoCompleteTextView
-                    android:id="@+id/companioGender"
+                    android:id="@+id/companionProfession"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"/>
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true" />
+            </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:hint="@string/companio_gender">
+
+                <AutoCompleteTextView
+                    android:id="@+id/companionGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/save_btn"
-                style="@style/Widget.Material3.Button.Icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@color/light_blue"
-                android:text="Save"
-                android:textSize="18sp"
-                 />
+                android:layout_margin="16dp"
+                android:text="@string/save"
+                android:backgroundTint="@color/light_blue"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/logout_btn"
-                style="@style/Widget.Material3.Button.Icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="80dp"
-                android:background="@color/light_blue"
-                android:text="Logout"
-                android:textSize="18sp"
-                 />
+                android:text="@string/logout"
+                android:backgroundTint="@color/light_blue"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
     </ScrollView>
-
 </LinearLayout>

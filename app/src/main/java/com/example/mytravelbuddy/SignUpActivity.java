@@ -2,9 +2,7 @@ package com.example.mytravelbuddy;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -13,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.mytravelbuddy.Models.User;
 import com.example.mytravelbuddy.databinding.ActivitySignUpBinding;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,22 +45,6 @@ public class SignUpActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Find the button by its ID
-       // Button signupButton = (Button) findViewById(R.id.SignUp_Button);
-
-        // Set the OnClickListener
-//        binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Create an Intent to navigate to SecondActivity
-//                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-//
-//                // Start the new activity
-//                startActivity(intent);
-//            }
-//        });
-
-//
         binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,11 +83,13 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
     private void saveUserToFirestore(String uid, String name, String email) {
-        Map<String, Object> userMap = new HashMap<>();
-        userMap.put("name", name);
-        userMap.put("email", email);
 
-        db.collection("Users").document(uid).set(userMap)
+        User user=new User();
+        user.setEmail(email);
+        user.setName(name);
+        user.setId(uid);
+
+        db.collection("Users").document(uid).set(user)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(SignUpActivity.this, "User registered successfully!", Toast.LENGTH_SHORT).show();
                     // Navigate to login or home

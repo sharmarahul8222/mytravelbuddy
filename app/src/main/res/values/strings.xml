@@ -7,6 +7,7 @@
     <string name="title_chats">Chats</string>
     <string name="title_profile">Profile</string>
     <string name="title_match">Match</string>
+
     <string name="name">Name</string>
     <string name="email">Email</string>
     <string name="mobile">Phone</string>
@@ -17,13 +18,19 @@
     <string name="companio_profession">Companio Profession</string>
     <string name="companio_gender">Companio Gender</string>
 
+    <!-- Added missing string resources -->
+    <string name="edit_image">Edit Image</string>
+    <string name="username">Username</string>
+    <string name="connections">Connections</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="companion_label">Your Companion Should Be:</string>
+    <string name="save">Save</string>
+    <string name="logout">Logout</string>
+    <string name="profile_image">Profile Image</string>
 
-
-
-
-
-
-
+    <string name="chat_with">Chat with</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="send">Send</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

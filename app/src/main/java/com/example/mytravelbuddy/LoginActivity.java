@@ -40,20 +40,6 @@ public class LoginActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.login_email);
         passwordEditText = findViewById(R.id.login_password);
 
-
-
-        // Set the OnClickListener
-//        loginButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Create an Intent to navigate to SecondActivity
-//                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-//
-//                // Start the new activity
-//                startActivity(intent);
-//            }
-//        });
-
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,8 +63,6 @@ public class LoginActivity extends AppCompatActivity {
                         });
             }
         });
-
-        //----------------------------------------------------------------------------------
 
 
     }
