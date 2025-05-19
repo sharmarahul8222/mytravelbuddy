@@ -6,8 +6,9 @@ plugins {
 android {
     namespace = "com.example.mytravelbuddy"
     compileSdk = 35
-    buildFeatures{
-        viewBinding=true;
+
+    buildFeatures {
+        viewBinding = true
     }
 
     defaultConfig {
@@ -29,14 +30,23 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    buildFeatures {
-        viewBinding = true
-    }
-}
+
+    packagingOptions {
+        resources{
+            excludes+= setOf(
+
+        "META-INF/NOTICE.md",
+        "META-INF/LICENSE.md",
+    "META-INF/LICENSE",
+        "META-INF/NOTICE"
+            )}
+}}
+
 
 dependencies {
 
@@ -56,5 +66,9 @@ dependencies {
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("com.google.firebase:firebase-auth:22.3.0")        // For authentication
     implementation ("com.google.firebase:firebase-firestore:24.10.0")   // For Firestore
+
+    implementation ("com.sun.mail:android-mail:1.6.7");
+    implementation ("com.sun.mail:android-activation:1.6.7");
+
 
 }
